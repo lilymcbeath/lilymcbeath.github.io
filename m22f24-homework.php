@@ -1,6 +1,6 @@
 <?php 
     $page_id='homework';
-    include('header.php');
+    include('m22f24-header.php');
 ?>
 
 <article id="content">
@@ -9,7 +9,7 @@
 
 <p>
 In Math 13 you have a number of responsibilities, the first of which is being fully aware 
-of the content of the <a href="general_info.php">general information</a> page.
+of the content of the <a href="m22f24-general-info.php">general information</a> page.
 </p>
 
 <p>

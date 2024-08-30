@@ -1,6 +1,6 @@
 <?php 
     $page_id='syllabus';
-    include('header.php');
+    include('m22f24-header.php');
 ?>
 
 <article id="content">
@@ -10,7 +10,7 @@
 <p>
 The following is a <b class="red">tentative</b> syllabus for the course. 
 This page will be updated irregularly. On the other hand, the weekly syllabus 
-contained in the <a href="homework.php">Homework</a> assignments page will always be accurate.
+contained in the <a href="m22f24-homework.php">Homework</a> assignments page will always be accurate.
 </p>
 
 <table class="table table-condensed table-hover">

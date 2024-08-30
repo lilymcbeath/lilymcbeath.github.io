@@ -1,6 +1,6 @@
 <?php 
     $page_id='general_info';
-    include('header.php');
+    include('m22f24-header.php');
 ?>
 
 <article id="content">

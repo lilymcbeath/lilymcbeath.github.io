@@ -41,26 +41,26 @@
       <label for="hamburger">&equiv;</label>
       <input type="checkbox" id="hamburger"/>
         <ul>
-	    <li><a href="index.php">Main</a></li>
+	    <li><a href="m22f24.php">Main</a></li>
 	    <li id="dropdown1">
-		<a href="general_info.php">General Information<span class="down">&nbsp;&#9662;</span></a>
+		<a href="m22f24-general-info.php">General Information<span class="down">&nbsp;&#9662;</span></a>
 		<div id="dropdown1-div"><!-- adding a div to achieve higher specificity than ul in CSS -->
 		<ul>
-		    <li><a href="general_info.php#textbook">Textbook</a></li>
-        	    <li><a href="general_info.php#lectures">Lectures</a></li>
-        	    <li><a href="general_info.php#instructors">Instructors</a></li>
-        	    <li><a href="general_info.php#exams">Exams</a></li>
-        	    <li><a href="general_info.php#homework">Homework Policy</a></li>
-        	    <li><a href="general_info.php#grades">Grades</a></li>
-        	    <li><a href="general_info.php#honor">The Honor Principle</a></li>
-        	    <li><a href="general_info.php#tutorials">Tutorials</a></li>
-        	    <li><a href="general_info.php#disabilities">Special Considerations</a></li>
+		    <li><a href="m22f24-general-info.php#textbook">Textbook</a></li>
+        	    <li><a href="m22f24-general-info.php#lectures">Lectures</a></li>
+        	    <li><a href="m22f24-general-info.php#instructors">Instructors</a></li>
+        	    <li><a href="m22f24-general-info.php#exams">Exams</a></li>
+        	    <li><a href="m22f24-general-info.php#homework">Homework Policy</a></li>
+        	    <li><a href="m22f24-general-info.php#grades">Grades</a></li>
+        	    <li><a href="m22f24-general-info.php#honor">The Honor Principle</a></li>
+        	    <li><a href="m22f24-general-info.php#tutorials">Tutorials</a></li>
+        	    <li><a href="m22f24-general-info.php#disabilities">Special Considerations</a></li>
         	</ul>
         	</div>
 	    </li>
-	    <li><a href="syllabus.php">Syllabus</a></li>
-	    <li><a href="homework.php">Homework</a></li>
-	    <li><a href="downloads.php">Downloads</a></li>
+	    <li><a href="m22f24-syllabus.php">Syllabus</a></li>
+	    <li><a href="m22f24-homework.php">Homework</a></li>
+	    <li><a href="m22f24-downloads.php">Downloads</a></li>
         </ul>
     </nav>
 
