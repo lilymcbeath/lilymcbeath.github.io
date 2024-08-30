@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Homework Dropbox for Math 76</title>
+  <meta charset="UTF-8" />
+  <meta name="author" lang="en" content="Šarunas Burdulis" />
+  <link rel="stylesheet" href="screen.css" type="text/css" />
+  <link rel="icon" href="graecolatin_ico.png" type="image/png" />
+</head>
+<body>
+<h1>Topics in ...</h1>
+<h3>Math ..., Term Year</h3>
+<h3>Prof. ...</h3>
+<hr />
+
+<?php
+// Upload size limits:
+// 1. HTML form hidden field MAX_FILE_SIZE
+// 2. PHP POST max size in php.ini
+// 3. Max. upload size in php.ini
+// 4. $_FILE["file"]["size"] can be checked as well
+$MAXSIZE = 100000000; //100MB. System wide limit is 110MB, set in php.ini.
+// Uploaded files will end up in this subdirectory.
+// It must have PHP disabled in Apache conf.: "php_flag engine off"
+$UPLOAD_DIR = 'dropbox/'; 
+
+// This will be set if POST was successful
+if ( isset($_FILES["file"]["tmp_name"]) ){
+
+if (
+    // Restrictions on file type can be set as well
+    #(($_FILES["file"]["type"] == "image/gif")
+    #|| ($_FILES["file"]["type"] == "image/jpeg")
+    #|| ($_FILES["file"]["type"] == "image/pjpeg"))
+    #&& 
+    ( $_FILES["file"]["size"] < $MAXSIZE ) 
+    )
+{
+    if ($_FILES["file"]["error"] > 0)
+    {   // upload failed
+	echo file_upload_error_msg( $_FILES["file"]["error"]) . "<br />"; 
+    }
+    else
+    {   // File uploaded fine. 
+	echo "Uploading: " . $_FILES["file"]["name"] . "<br />";
+	echo "Type: " . $_FILES["file"]["type"] . "<br />";
+	echo "Size: " . ($_FILES["file"]["size"] / 1000) . " KB<br />";
+	#echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
+
+	// Does a file with the same name already exist in upload destination?
+	if ( file_exists( $UPLOAD_DIR . $_FILES["file"]["name"] ))
+	{
+	    echo $_FILES["file"]["name"] . " already exists. ";
+        }
+	else
+	{ // Can uploaded file be moved to upload destination?
+	    if( move_uploaded_file( $_FILES['file']['tmp_name'], $UPLOAD_DIR . $_FILES["file"]["name"] )) {
+		echo "File ".  basename( $_FILES['file']['name']). " has been uploaded.";
+	    } else {
+		echo "Upload failed. There was an error while moving uploaded file.";
+	    }
+	}
+    }
+}
+else
+{
+    echo "Upload failed. File size exceeds $MAXSIZE."; 
+}
+}
+else
+{
+    echo "Upload failed. File size exceeds max. POST size."; // limit is set in php.ini
+}
+
+// Function to decrypt file upload return codes
+function file_upload_error_msg($error_code) {
+    switch ($error_code) {
+    case UPLOAD_ERR_INI_SIZE:
+        return 'The uploaded file exceeds the upload_max_filesize directive in php.ini.';
+    case UPLOAD_ERR_FORM_SIZE:
+        return 'The uploaded file exceeds the MAX_FILE_SIZE directive specified in the HTML form.';
+    case UPLOAD_ERR_PARTIAL:
+        return 'The uploaded file was only partially uploaded.';
+    case UPLOAD_ERR_NO_FILE:
+        return 'No file was uploaded.';
+    case UPLOAD_ERR_NO_TMP_DIR:
+        return 'Missing a temporary folder.';
+    case UPLOAD_ERR_CANT_WRITE:
+        return 'Failed to write file to disk.';
+    case UPLOAD_ERR_EXTENSION:
+        return 'File upload stopped by extension.';
+    default:
+        return 'Unknown upload error.';
+    }
+}
+#phpinfo();
+?> 
+
+<hr />
+<a href="http://math.dartmouth.edu/~m76w11">Back</a> | <a href="http://math.dartmouth.edu">Mathematics at Dartmouth</a>
+
+</body>
+</html> 
